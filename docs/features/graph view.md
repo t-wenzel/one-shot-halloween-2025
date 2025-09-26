@@ -1,5 +1,5 @@
 ---
-title: "Graph View"
+title: "Tela de Gráfico"
 tags:
   - component
 ---

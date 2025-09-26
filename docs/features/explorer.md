@@ -1,5 +1,5 @@
 ---
-title: "Explorer"
+title: "Explorador"
 tags:
   - component
 ---

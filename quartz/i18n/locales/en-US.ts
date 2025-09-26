@@ -2,86 +2,86 @@ import { Translation } from "./definition"
 
 export default {
   propertyDefaults: {
-    title: "Untitled",
-    description: "No description provided",
+    title: "Sem título",
+    description: "Nenhuma descrição providenciada",
   },
   components: {
     callout: {
-      note: "Note",
-      abstract: "Abstract",
+      note: "Nota",
+      abstract: "Resumo",
       info: "Info",
       todo: "Todo",
-      tip: "Tip",
-      success: "Success",
-      question: "Question",
-      warning: "Warning",
-      failure: "Failure",
-      danger: "Danger",
+      tip: "Dica",
+      success: "Successo",
+      question: "Pergunta",
+      warning: "Aviso",
+      failure: "Falha",
+      danger: "Perigo",
       bug: "Bug",
-      example: "Example",
-      quote: "Quote",
+      example: "Exemplo",
+      quote: "Citação",
     },
     backlinks: {
       title: "Backlinks",
-      noBacklinksFound: "No backlinks found",
+      noBacklinksFound: "Nenhum backlink encontrado",
     },
     themeToggle: {
-      lightMode: "Light mode",
-      darkMode: "Dark mode",
+      lightMode: "Modo claro",
+      darkMode: "Modo escuro",
     },
     readerMode: {
-      title: "Reader mode",
+      title: "Modo leitor",
     },
     explorer: {
-      title: "Explorer",
+      title: "Explorador",
     },
     footer: {
-      createdWith: "Created with",
+      createdWith: "Criado com",
     },
     graph: {
-      title: "Graph View",
+      title: "Tela de gráfico",
     },
     recentNotes: {
-      title: "Recent Notes",
-      seeRemainingMore: ({ remaining }) => `See ${remaining} more →`,
+      title: "Notas recentes",
+      seeRemainingMore: ({ remaining }) => `Veja mais ${remaining} →`,
     },
     transcludes: {
-      transcludeOf: ({ targetSlug }) => `Transclude of ${targetSlug}`,
-      linkToOriginal: "Link to original",
+      transcludeOf: ({ targetSlug }) => `Transclusão de ${targetSlug}`,
+      linkToOriginal: "Link para o original",
     },
     search: {
-      title: "Search",
-      searchBarPlaceholder: "Search for something",
+      title: "Buscar",
+      searchBarPlaceholder: "Buscar por algo",
     },
     tableOfContents: {
-      title: "Table of Contents",
+      title: "Tabela de Conteúdos",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `${minutes} min read`,
+      readingTime: ({ minutes }) => `Leitura de ${minutes} minutos`,
     },
   },
   pages: {
     rss: {
-      recentNotes: "Recent notes",
-      lastFewNotes: ({ count }) => `Last ${count} notes`,
+      recentNotes: "Notas recentes",
+      lastFewNotes: ({ count }) => `Últimas ${count} notas`,
     },
     error: {
-      title: "Not Found",
-      notFound: "Either this page is private or doesn't exist.",
-      home: "Return to Homepage",
+      title: "Não encontrado",
+      notFound: "Essa página é privada ou não existe.",
+      home: "Retornar à Home",
     },
     folderContent: {
-      folder: "Folder",
+      folder: "Pasta",
       itemsUnderFolder: ({ count }) =>
-        count === 1 ? "1 item under this folder." : `${count} items under this folder.`,
+        count === 1 ? "1 item dentro desta pasta." : `${count} itens dentro desta pasta.`,
     },
     tagContent: {
       tag: "Tag",
-      tagIndex: "Tag Index",
+      tagIndex: "Índice da Tag",
       itemsUnderTag: ({ count }) =>
-        count === 1 ? "1 item with this tag." : `${count} items with this tag.`,
-      showingFirst: ({ count }) => `Showing first ${count} tags.`,
-      totalTags: ({ count }) => `Found ${count} total tags.`,
+        count === 1 ? "1 item com esta tag." : `${count} itens com esta tag.`,
+      showingFirst: ({ count }) => `Mostrando as primeiras ${count} tags.`,
+      totalTags: ({ count }) => `Total de ${count} notas encontradas.`,
     },
   },
 } as const satisfies Translation
