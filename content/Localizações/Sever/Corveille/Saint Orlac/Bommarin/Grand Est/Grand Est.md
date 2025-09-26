@@ -8,13 +8,6 @@ Some text about Grand Est.
 
 
 ---
-
-<table>
-  <tr>
-    <td><img src="quartz/static/img/Grand Est Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" alt="img1" style="max-width:100%;height:auto;"></td>
-    <td><img src="quartz/static/img/Grand Est Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" alt="img2" style="max-width:100%;height:auto;"></td>
-    <td><img src="quartz/static/img/Grand Est Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" alt="img3" style="max-width:100%;height:auto;"></td>
-  </tr>
-</table>
+<iframe src="https://www.pinterest.com/backed47/grand-est/" width="600" height="400"></iframe>
 
 ---
