@@ -42,16 +42,16 @@ export default {
       title: "Tela de gráfico",
     },
     recentNotes: {
-      title: "Recent Notes",
-      seeRemainingMore: ({ remaining }) => `See ${remaining} more →`,
+      title: "Notas recentes",
+      seeRemainingMore: ({ remaining }) => `Veja mais ${remaining} →`,
     },
     transcludes: {
-      transcludeOf: ({ targetSlug }) => `Transclude of ${targetSlug}`,
-      linkToOriginal: "Link to original",
+      transcludeOf: ({ targetSlug }) => `Transclusão de ${targetSlug}`,
+      linkToOriginal: "Link para o original",
     },
     search: {
-      title: "Search",
-      searchBarPlaceholder: "Search for something",
+      title: "Buscar",
+      searchBarPlaceholder: "Buscar por algo",
     },
     tableOfContents: {
       title: "Table of Contents",
