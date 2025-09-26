@@ -1,24 +1,39 @@
 ---
 title: Grand Est
-tags:
 gallery:
-  - "[[images/picture1.jpg]]"
-  - "[[images/picture2.jpg]]"
 ---
 ---
-Some text
+
+Some text about Grand Est.
+
+
+---
 
 ```dataviewjs
-const imgs = dv.current().gallery;
-if (!imgs) {
-  dv.paragraph("No images found in gallery field.");
-} else {
-  let html = `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:8px;">`;
-  for (let img of imgs) {
-    let linkObj = dv.fileLink(img);
-    let path = app.vault.getResourcePath(linkObj.path);
-    html += `<div><img src="${path}" style="width:100%; height:auto; object-fit:cover;" alt="${linkObj.path}"></div>`;
-  }
-  html += `</div>`;
-  dv.paragraph(html);
+const folder = "content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens"; // folder path inside vault
+const cols = 3;
+
+const files = app.vault.getFiles()
+  .filter(f => f.path.startsWith(folder + "/") && /\.(png|jpe?g|gif|webp)$/i.test(f.path))
+  .sort((a,b) => a.name.localeCompare(b.name));
+
+let md = "";
+// empty header
+for (let i=0;i<cols;i++) md += "| ";
+md += "|\n";
+// separator
+for (let i=0;i<cols;i++) md += "|---";
+md += "|\n";
+
+// rows
+for (let i=0;i<files.length;i++) {
+  if (i % cols === 0) md += "|";
+  md += ` ![[${files[i].path}]] |`;
+  if (i % cols === cols-1) md += "\n";
 }
+if (files.length % cols !== 0) md += "\n";
+
+dv.paragraph(md);
+```
+
+---
