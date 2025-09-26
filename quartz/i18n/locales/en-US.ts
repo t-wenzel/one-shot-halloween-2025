@@ -2,24 +2,24 @@ import { Translation } from "./definition"
 
 export default {
   propertyDefaults: {
-    title: "Untitled",
-    description: "No description provided",
+    title: "Sem título",
+    description: "Nenhuma descrição providenciada",
   },
   components: {
     callout: {
-      note: "Note",
-      abstract: "Abstract",
+      note: "Nota",
+      abstract: "Resumo",
       info: "Info",
       todo: "Todo",
-      tip: "Tip",
-      success: "Success",
-      question: "Question",
-      warning: "Warning",
-      failure: "Failure",
-      danger: "Danger",
+      tip: "Dica",
+      success: "Successo",
+      question: "Pergunta",
+      warning: "Aviso",
+      failure: "Falha",
+      danger: "Perigo",
       bug: "Bug",
-      example: "Example",
-      quote: "Quote",
+      example: "Exemplo",
+      quote: "Citação",
     },
     backlinks: {
       title: "Backlinks",
