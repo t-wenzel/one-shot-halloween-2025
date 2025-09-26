@@ -23,41 +23,41 @@ export default {
     },
     backlinks: {
       title: "Backlinks",
-      noBacklinksFound: "Nenhum backlink encontrado",
+      noBacklinksFound: "No backlinks found",
     },
     themeToggle: {
-      lightMode: "Modo claro",
-      darkMode: "Modo escuro",
+      lightMode: "Light mode",
+      darkMode: "Dark mode",
     },
     readerMode: {
-      title: "Modo leitor",
+      title: "Reader mode",
     },
     explorer: {
-      title: "Explorador",
+      title: "Explorer",
     },
     footer: {
-      createdWith: "Criado com",
+      createdWith: "Created with",
     },
     graph: {
-      title: "Tela de gráfico",
+      title: "Graph View",
     },
     recentNotes: {
-      title: "Notas recentes",
-      seeRemainingMore: ({ remaining }) => `Veja mais ${remaining} →`,
+      title: "Recent Notes",
+      seeRemainingMore: ({ remaining }) => `See ${remaining} more →`,
     },
     transcludes: {
-      transcludeOf: ({ targetSlug }) => `Transclusão de ${targetSlug}`,
-      linkToOriginal: "Link para o original",
+      transcludeOf: ({ targetSlug }) => `Transclude of ${targetSlug}`,
+      linkToOriginal: "Link to original",
     },
     search: {
-      title: "Buscar",
-      searchBarPlaceholder: "Buscar por algo",
+      title: "Search",
+      searchBarPlaceholder: "Search for something",
     },
     tableOfContents: {
-      title: "Tabela de Conteúdos",
+      title: "Table of Contents",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `Leitura de ${minutes} minutos`,
+      readingTime: ({ minutes }) => `${minutes} min read`,
     },
   },
   pages: {
