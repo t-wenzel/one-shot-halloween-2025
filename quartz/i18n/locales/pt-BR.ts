@@ -71,7 +71,7 @@ export default {
       home: "Retornar a página inicial",
     },
     folderContent: {
-      folder: "Arquivo",
+      folder: "Pasta",
       itemsUnderFolder: ({ count }) =>
         count === 1 ? "1 item neste arquivo." : `${count} items neste arquivo.`,
     },
