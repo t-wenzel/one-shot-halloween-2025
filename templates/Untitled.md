@@ -6,7 +6,7 @@ Templater gallery generator (robust)
 - Produces a <table> with images (cols per row controlled by `cols`).
 - Falls back safely if folder not found or no images present.
   \*/
-  const folder = "Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens"; // <-- edit this if needed
+  const folder = "../content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens"; // <-- edit this if needed
   const cols = 3; // images per row
 
 try {

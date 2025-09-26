@@ -10,7 +10,7 @@ Some text about Grand Est.
 <%\*
 // Templater gallery generator
 // Edit the `folder` variable below to the folder path inside your vault (as shown in Obsidian file explorer).
-const folder = "content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens";
+const folder = "../content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens";
 
 // get folder children
 const folderNode = app.vault.getAbstractFileByPath(folder);
