@@ -54,10 +54,10 @@ export default {
       searchBarPlaceholder: "Buscar por algo",
     },
     tableOfContents: {
-      title: "Table of Contents",
+      title: "Tabela de Conteúdos",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `${minutes} min read`,
+      readingTime: ({ minutes }) => `Leitura de ${minutes} minutos`,
     },
   },
   pages: {
