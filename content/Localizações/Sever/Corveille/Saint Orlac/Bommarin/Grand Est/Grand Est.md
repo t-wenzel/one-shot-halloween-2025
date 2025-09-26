@@ -9,31 +9,11 @@ Some text about Grand Est.
 
 ---
 
-```html
 <table>
   <tr>
-    <td>![[img1.png]]</td>
-    <td>![[img2.png]]</td>
-    <td>![[img3.png]]</td>
-  </tr>
-  <tr>
-    <td>![[img4.png]]</td>
-    <td>![[img5.png]]</td>
-    <td>![[img6.png]]</td>
-  </tr>
-</table>
-```
-
-<table>
-  <tr>
-    <td>![[fe12852218889be2b5f7c0c77e03ec31.jpg]]</td>
-    <td>![[img2.png]]</td>
-    <td>![[img3.png]]</td>
-  </tr>
-  <tr>
-    <td>![[img4.png]]</td>
-    <td>![[img5.png]]</td>
-    <td>![[img6.png]]</td>
+    <td><img src="content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" alt="img1" style="max-width:100%;height:auto;"></td>
+    <td><img src="content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" alt="img2" style="max-width:100%;height:auto;"></td>
+    <td><img src="content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" alt="img3" style="max-width:100%;height:auto;"></td>
   </tr>
 </table>
 
