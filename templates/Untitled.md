@@ -1,4 +1,4 @@
-<%*
+<%
 /*
   Templater gallery generator (robust)
   - Set `folder` to the folder path as shown in Obsidian file explorer (relative to vault root).
