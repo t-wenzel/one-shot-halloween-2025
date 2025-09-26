@@ -26,7 +26,7 @@ Some text about Grand Est.
 
 <table>
   <tr>
-    <td>![[img1.png]]</td>
+    <td>![[fe12852218889be2b5f7c0c77e03ec31.jpg]]</td>
     <td>![[img2.png]]</td>
     <td>![[img3.png]]</td>
   </tr>
