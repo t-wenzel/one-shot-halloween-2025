@@ -23,23 +23,23 @@ export default {
     },
     backlinks: {
       title: "Backlinks",
-      noBacklinksFound: "No backlinks found",
+      noBacklinksFound: "Nenhum backlink encontrado",
     },
     themeToggle: {
-      lightMode: "Light mode",
-      darkMode: "Dark mode",
+      lightMode: "Modo claro",
+      darkMode: "Modo escuro",
     },
     readerMode: {
-      title: "Reader mode",
+      title: "Modo leitor",
     },
     explorer: {
-      title: "Explorer",
+      title: "Explorador",
     },
     footer: {
-      createdWith: "Created with",
+      createdWith: "Criado com",
     },
     graph: {
-      title: "Graph View",
+      title: "Tela de gráfico",
     },
     recentNotes: {
       title: "Recent Notes",
