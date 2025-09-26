@@ -2,62 +2,62 @@ import { Translation } from "./definition"
 
 export default {
   propertyDefaults: {
-    title: "Sem título",
-    description: "Nenhuma descrição providenciada",
+    title: "Untitled",
+    description: "No description provided",
   },
   components: {
     callout: {
-      note: "Nota",
-      abstract: "Resumo",
+      note: "Note",
+      abstract: "Abstract",
       info: "Info",
       todo: "Todo",
-      tip: "Dica",
-      success: "Successo",
-      question: "Pergunta",
-      warning: "Aviso",
-      failure: "Falha",
-      danger: "Perigo",
+      tip: "Tip",
+      success: "Success",
+      question: "Question",
+      warning: "Warning",
+      failure: "Failure",
+      danger: "Danger",
       bug: "Bug",
-      example: "Exemplo",
-      quote: "Citação",
+      example: "Example",
+      quote: "Quote",
     },
     backlinks: {
       title: "Backlinks",
-      noBacklinksFound: "Nenhum backlink encontrado",
+      noBacklinksFound: "No backlinks found",
     },
     themeToggle: {
-      lightMode: "Modo claro",
-      darkMode: "Modo escuro",
+      lightMode: "Light mode",
+      darkMode: "Dark mode",
     },
     readerMode: {
-      title: "Modo leitor",
+      title: "Reader mode",
     },
     explorer: {
-      title: "Explorador",
+      title: "Explorer",
     },
     footer: {
-      createdWith: "Criado com",
+      createdWith: "Created with",
     },
     graph: {
-      title: "Tela de gráfico",
+      title: "Graph View",
     },
     recentNotes: {
-      title: "Notas recentes",
-      seeRemainingMore: ({ remaining }) => `Veja mais ${remaining} →`,
+      title: "Recent Notes",
+      seeRemainingMore: ({ remaining }) => `See ${remaining} more →`,
     },
     transcludes: {
-      transcludeOf: ({ targetSlug }) => `Transclusão de ${targetSlug}`,
-      linkToOriginal: "Link para o original",
+      transcludeOf: ({ targetSlug }) => `Transclude of ${targetSlug}`,
+      linkToOriginal: "Link to original",
     },
     search: {
-      title: "Buscar",
-      searchBarPlaceholder: "Buscar por algo",
+      title: "Search",
+      searchBarPlaceholder: "Search for something",
     },
     tableOfContents: {
-      title: "Tabela de Conteúdos",
+      title: "Table of Contents",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `Leitura de ${minutes} minutos`,
+      readingTime: ({ minutes }) => `${minutes} min read`,
     },
   },
   pages: {
