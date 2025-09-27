@@ -57,15 +57,4 @@
   <tr>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Grand%20Est%20Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" data-site="Grand-Est-Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" alt="fe12852218889be2b5f7c0c77e03ec31.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
   </tr>
-</table>\n<script>
-(function(){
-  try {
-    if (location.protocol !== 'file:') {
-      document.querySelectorAll('.templater-gallery-img').forEach(function(img){
-        const site = img.getAttribute('data-site');
-        if (site) img.src = site;
-      });
-    }
-  } catch(e){}
-})();
-</script>
+</table>
