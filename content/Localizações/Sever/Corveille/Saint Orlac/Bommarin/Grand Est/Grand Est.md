@@ -80,4 +80,3 @@ Grand Est é um bairro ao leste de [[Bommarin]]. É um dos maiores bairros de [[
   } catch(e){}
 })();
 </script>
----
