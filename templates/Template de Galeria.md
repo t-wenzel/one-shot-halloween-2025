@@ -74,7 +74,7 @@ try {
       rows.push(row);
     }
 
-    const tableHtml = "<table style=\"width:100%; border-collapse:collapse;\">\n" + rows.join("\n") + "\n</table>";
+    const tableHtml = "<table style=\"border-collapse:collapse;\">" + rows.join("\n") + "\n</table>";
 
     // swap script: runs on site (non-file) to switch src -> data-site
     const script = `<script>
@@ -90,7 +90,7 @@ try {
 })();
 </script>`;
 
-    tR = tableHtml + "\\n" + script;
+    tR = tableHtml + script;
   }
 } catch(err) {
   tR = `<!-- Templater: error generating gallery: ${String(err)} -->`;
