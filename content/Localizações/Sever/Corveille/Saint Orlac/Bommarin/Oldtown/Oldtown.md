@@ -6,7 +6,8 @@ tags:
 
 
 ---
-<table style="border-collapse:collapse;">  <tr>
+<table style="width:100%; border-collapse:collapse;">
+  <tr>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" data-site="Oldtown-Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" alt="1a574d104e66bdf24755c4d6e59b87fb.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/4c9011dbc382af1f7d28075fd12c3e9b.jpg" data-site="Oldtown-Imagens/4c9011dbc382af1f7d28075fd12c3e9b.jpg" alt="4c9011dbc382af1f7d28075fd12c3e9b.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/4f29a804bb45b4daf3d3ea6232dd2909.jpg" data-site="Oldtown-Imagens/4f29a804bb45b4daf3d3ea6232dd2909.jpg" alt="4f29a804bb45b4daf3d3ea6232dd2909.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
