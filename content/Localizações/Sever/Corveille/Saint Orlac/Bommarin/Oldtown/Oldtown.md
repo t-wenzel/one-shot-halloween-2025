@@ -6,7 +6,6 @@ tags:
 
 
 ---
-
 <table style="border-collapse:collapse;">  <tr>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" data-site="Oldtown-Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" alt="1a574d104e66bdf24755c4d6e59b87fb.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/4c9011dbc382af1f7d28075fd12c3e9b.jpg" data-site="Oldtown-Imagens/4c9011dbc382af1f7d28075fd12c3e9b.jpg" alt="4c9011dbc382af1f7d28075fd12c3e9b.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
@@ -54,23 +53,12 @@ tags:
 </table><script>
 (function(){
   try {
-    // only run when served from web (not file:)
     if (location.protocol !== 'file:') {
       document.querySelectorAll('.templater-gallery-img').forEach(function(img){
         const site = img.getAttribute('data-site');
-        if (!site) return;
-
-        const current = img.getAttribute('src') || '';
-
-        // If the builder already rewrote the path to an absolute one (starts with '/' or 'http'),
-        // don't override it — leave the builder's (correct) path in place.
-        if (current.startsWith('/') || current.startsWith('http')) return;
-
-        // Otherwise use data-site (relative). If you prefer an absolute path add leading slash to data-site.
-        img.src = site;
+        if (site) img.src = site;
       });
     }
   } catch(e){}
 })();
 </script>
-

@@ -80,26 +80,15 @@ try {
     const script = `<script>
 (function(){
   try {
-    // only run when served from web (not file:)
     if (location.protocol !== 'file:') {
       document.querySelectorAll('.templater-gallery-img').forEach(function(img){
         const site = img.getAttribute('data-site');
-        if (!site) return;
-
-        const current = img.getAttribute('src') || '';
-
-        // If the builder already rewrote the path to an absolute one (starts with '/' or 'http'),
-        // don't override it — leave the builder's (correct) path in place.
-        if (current.startsWith('/') || current.startsWith('http')) return;
-
-        // Otherwise use data-site (relative). If you prefer an absolute path add leading slash to data-site.
-        img.src = site;
+        if (site) img.src = site;
       });
     }
   } catch(e){}
 })();
-</script>
-`;
+</script>`;
 
     tR = tableHtml + script;
   }
