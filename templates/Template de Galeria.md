@@ -1,28 +1,36 @@
 <%*
 /*
-  Robust gallery Templater:
-  - emits src = shortest local relative path (for Obsidian preview)
-  - emits data-site candidates and a script that tries them on the published site
-  - edit `parentFolder` logic if your structure is different
+  Templater: shortest-site-path gallery generator
+  - Set `folder` to the vault folder that contains images (exactly as shown in Obsidian).
+  - Emits src = shortest local relative path (for Obsidian) and data-site = "kebab-folder-name/filename" (for Quartz).
 */
-const parentFolder = tp.file.folder(true);        // folder containing this note
-const baseName = tp.file.title;                   // note title (basename)
-const folder = `${parentFolder}/${baseName} Imagens`; // images folder
+const parentFolder = tp.file.folder(true);
+// Get the current file’s basename (filename without extension)
+const baseName = tp.file.title;  
+// Build the image folder path by appending " Imagens"
+const folder = `${parentFolder}/${baseName} Imagens`; // edit to match your vault
 const cols = 3;
 
-// helpers
+// remove diacritics + convert spaces to hyphens (kebab-case-ish)
 function kebabify(s){
+  // remove leading/trailing slashes
   s = String(s).replace(/^\/+|\/+$/g, "");
+  // normalize and remove diacritics
   s = s.normalize('NFD').replace(/\p{Diacritic}/gu, "");
+  // replace spaces and repeated non-alnum with hyphens
   s = s.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g,'');
   return s;
 }
+
 function encodePath(p){ return encodeURI(p).replace(/#/g,'%23'); }
+
 function relativePath(fromDir, toPath){
   const a = fromDir.replace(/\\/g,"/").replace(/\/+$/,"").split("/");
   const b = toPath.replace(/\\/g,"/").split("/");
-  let i=0; while(i<a.length && i<b.length && a[i]===b[i]) i++;
-  const up = a.length - i; const parts = [];
+  let i=0;
+  while(i<a.length && i<b.length && a[i]===b[i]) i++;
+  const up = a.length - i;
+  const parts = [];
   for(let j=0;j<up;j++) parts.push("..");
   for(let j=i;j<b.length;j++) parts.push(b[j]);
   return parts.join("/") || "./";
@@ -44,65 +52,56 @@ try {
   if (!images || images.length === 0) {
     tR = `<!-- Templater: No images found in folder '${normalizedFolder}'. -->`;
   } else {
+    // compute folder basename (last segment) and kebabify it
     const parts = normalizedFolder.split("/");
     const basename = parts[parts.length - 1];
-    const siteFolderKebab = kebabify(basename); // e.g. "Grand-Est-Imagens"
+    const siteFolder = kebabify(basename); // e.g. "Grand-Est-Imagens"
 
     let rows = [];
     for (let i=0;i<images.length;i+=cols){
       const slice = images.slice(i, i+cols);
       let row = "  <tr>\n";
       for (const f of slice){
-        const vaultPath = f.path.replace(/\\/g,"/");                // e.g. "content/.../Grand Est Imagens/..."
-        const filename = vaultPath.split("/").slice(-1)[0];        // file name
-        // candidate site paths (common patterns)
-        const candidate1 = siteFolderKebab + "/" + filename;               // "Grand-Est-Imagens/file.jpg"
-        const candidate2 = "/" + candidate1;                               // "/Grand-Est-Imagens/file.jpg"
-        const candidate3 = vaultPath.replace(/^content\//,"");             // "Localizações/..../file.jpg" (no leading content/)
-        const candidate4 = candidate3.replace(/^\/+/,"");                  // same without leading slash if any
-        const candidate5 = "./" + candidate1;                              // relative candidate
-        // local shortest path for Obsidian preview
+        const vaultPath = f.path.replace(/\\/g,"/");                    // e.g. "content/.../Grand Est Imagens/..."
+        const filename = vaultPath.split("/").slice(-1)[0];
+        const sitePathShort = siteFolder + "/" + filename;             // "Grand-Est-Imagens/0c3....jpg"
         const localRel = noteDir ? relativePath(noteDir, vaultPath) : vaultPath;
+        const safeSite = encodePath(sitePathShort);
         const safeLocal = encodePath(localRel);
-        // put candidates into JSON string to embed in data attribute
-        const candidatesArr = [candidate1, candidate2, candidate3, candidate4, candidate5].map(encodePath);
-        const dataCandidates = JSON.stringify(candidatesArr);
-
-        row += `    <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="${safeLocal}" data-candidates='${dataCandidates}' alt="${f.name}" style="max-width:100%; height:auto; border-radius:8px;"></td>\n`;
+        row += `    <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="${safeLocal}" data-site="${safeSite}" alt="${f.name}" style="max-width:100%; height:auto; border-radius:8px;"></td>\n`;
       }
       row += "  </tr>";
       rows.push(row);
     }
 
-    const tableHtml = "<table style=\"width:100%; border-collapse:collapse;\">\n" + rows.join("\n") + "\n</table>";
+    const tableHtml = "<table style=\"border-collapse:collapse;\">" + rows.join("\n") + "\n</table>";
 
-    // script: on published site (non-file:) try the candidates in order; use Image() preloader to check
-    const loaderScript = `<script>
+    // swap script: runs on site (non-file) to switch src -> data-site
+    const script = `<script>
 (function(){
   try {
-    if (location.protocol === 'file:') return; // don't run in Obsidian preview
-    function trySet(img, candidates, idx){
-      if (!candidates || idx >= candidates.length) return;
-      var test = new Image();
-      test.onload = function(){ img.src = candidates[idx]; };
-      test.onerror = function(){ trySet(img, candidates, idx+1); };
-      test.src = candidates[idx];
+    // only run when served from web (not file:)
+    if (location.protocol !== 'file:') {
+      document.querySelectorAll('.templater-gallery-img').forEach(function(img){
+        const site = img.getAttribute('data-site');
+        if (!site) return;
+
+        const current = img.getAttribute('src') || '';
+
+        // If the builder already rewrote the path to an absolute one (starts with '/' or 'http'),
+        // don't override it — leave the builder's (correct) path in place.
+        if (current.startsWith('/') || current.startsWith('http')) return;
+
+        // Otherwise use data-site (relative). If you prefer an absolute path add leading slash to data-site.
+        img.src = site;
+      });
     }
-    document.querySelectorAll('.templater-gallery-img').forEach(function(img){
-      var raw = img.getAttribute('data-candidates');
-      if (!raw) return;
-      try {
-        var candidates = JSON.parse(raw);
-        // remove duplicates & falsy
-        candidates = candidates.filter(function(x,i,a){ return x && a.indexOf(x)===i; });
-        trySet(img, candidates, 0);
-      } catch(e){}
-    });
   } catch(e){}
 })();
-</script>`;
+</script>
+`;
 
-    tR = tableHtml + "\n" + loaderScript;
+    tR = tableHtml + script;
   }
 } catch(err) {
   tR = `<!-- Templater: error generating gallery: ${String(err)} -->`;
