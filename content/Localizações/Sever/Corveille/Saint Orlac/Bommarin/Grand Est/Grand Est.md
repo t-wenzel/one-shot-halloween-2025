@@ -1,3 +1,5 @@
+TEXT
+
 <table style="width:100%; border-collapse:collapse;">
   <tr>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Grand%20Est%20Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" data-site="Grand-Est-Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" alt="0c36731be9c6ac9923e406b7ee507d58.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
@@ -57,8 +59,7 @@
   <tr>
     <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="Grand%20Est%20Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" data-site="Grand-Est-Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" alt="fe12852218889be2b5f7c0c77e03ec31.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
   </tr>
-</table>
-<script>
+</table>\n<script>
 (function(){
   try {
     if (location.protocol !== 'file:') {

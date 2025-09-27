@@ -4,7 +4,11 @@
   - Set `folder` to the vault folder that contains images (exactly as shown in Obsidian).
   - Emits src = shortest local relative path (for Obsidian) and data-site = "kebab-folder-name/filename" (for Quartz).
 */
-const folder = "content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens"; // edit to match your vault
+const parentFolder = tp.file.folder(true);
+// Get the current file’s basename (filename without extension)
+const baseName = tp.file.title;  
+// Build the image folder path by appending " Imagens"
+const folder = `${parentFolder}/${baseName} Imagens`; // edit to match your vault
 const cols = 3;
 
 // remove diacritics + convert spaces to hyphens (kebab-case-ish)
