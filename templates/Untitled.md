@@ -1,16 +1,25 @@
 <%*
 /*
-  Templater: gallery generator that outputs local src (for Obsidian preview)
-  and data-site (for published site). The inline script swaps to data-site
-  when running in a normal browser (not file://). This avoids needing to change Quartz.
+  Templater: shortest-site-path gallery generator
+  - Set `folder` to the vault folder that contains images (exactly as shown in Obsidian).
+  - Emits src = shortest local relative path (for Obsidian) and data-site = "kebab-folder-name/filename" (for Quartz).
 */
-const folder = "content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens"; // set exactly as in File Explorer
+const folder = "content/Localizações/Sever/Corveille/Saint Orlac/Bommarin/Grand Est/Grand Est Imagens"; // edit to match your vault
 const cols = 3;
 
-// helper encode for URLs
-function encodePath(p){ return encodeURI(p).replace(/#/g,"%23"); }
+// remove diacritics + convert spaces to hyphens (kebab-case-ish)
+function kebabify(s){
+  // remove leading/trailing slashes
+  s = String(s).replace(/^\/+|\/+$/g, "");
+  // normalize and remove diacritics
+  s = s.normalize('NFD').replace(/\p{Diacritic}/gu, "");
+  // replace spaces and repeated non-alnum with hyphens
+  s = s.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g,'');
+  return s;
+}
 
-// compute shortest relative path from noteDir to vaultPath
+function encodePath(p){ return encodeURI(p).replace(/#/g,'%23'); }
+
 function relativePath(fromDir, toPath){
   const a = fromDir.replace(/\\/g,"/").replace(/\/+$/,"").split("/");
   const b = toPath.replace(/\\/g,"/").split("/");
@@ -39,15 +48,21 @@ try {
   if (!images || images.length === 0) {
     tR = `<!-- Templater: No images found in folder '${normalizedFolder}'. -->`;
   } else {
+    // compute folder basename (last segment) and kebabify it
+    const parts = normalizedFolder.split("/");
+    const basename = parts[parts.length - 1];
+    const siteFolder = kebabify(basename); // e.g. "Grand-Est-Imagens"
+
     let rows = [];
     for (let i=0;i<images.length;i+=cols){
       const slice = images.slice(i, i+cols);
       let row = "  <tr>\n";
       for (const f of slice){
-        const vaultPath = f.path.replace(/\\/g,"/");                       // e.g. "content/Localizações/..."
-        const sitePath = "/" + vaultPath.replace(/^content\//, "");       // e.g. "/Localizações/..." <- published site path
-        const localRel = noteDir ? relativePath(noteDir, vaultPath) : vaultPath; // shortest relative for Obsidian
-        const safeSite = encodePath(sitePath);
+        const vaultPath = f.path.replace(/\\/g,"/");                    // e.g. "content/.../Grand Est Imagens/..."
+        const filename = vaultPath.split("/").slice(-1)[0];
+        const sitePathShort = siteFolder + "/" + filename;             // "Grand-Est-Imagens/0c3....jpg"
+        const localRel = noteDir ? relativePath(noteDir, vaultPath) : vaultPath;
+        const safeSite = encodePath(sitePathShort);
         const safeLocal = encodePath(localRel);
         row += `    <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="${safeLocal}" data-site="${safeSite}" alt="${f.name}" style="max-width:100%; height:auto; border-radius:8px;"></td>\n`;
       }
@@ -57,7 +72,7 @@ try {
 
     const tableHtml = "<table style=\"width:100%; border-collapse:collapse;\">\n" + rows.join("\n") + "\n</table>";
 
-    // script: swap to data-site ONLY if not running under file:// (i.e. on the published site)
+    // swap script: runs on site (non-file) to switch src -> data-site
     const script = `<script>
 (function(){
   try {
