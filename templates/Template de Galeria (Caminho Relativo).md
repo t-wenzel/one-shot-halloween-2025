@@ -57,7 +57,7 @@ try {
     let rows = [];
     for (let i=0;i<images.length;i+=cols){
       const slice = images.slice(i, i+cols);
-      let row = "  <tr>\n";
+      let row = `  <tr style="display: grid;grid-template-columns: repeat(3,1fr);">\n`;
       for (const f of slice){
         const vaultPath = f.path.replace(/\\/g,"/");                    // e.g. "content/.../Grand Est Imagens/..."
         const filename = vaultPath.split("/").slice(-1)[0];
