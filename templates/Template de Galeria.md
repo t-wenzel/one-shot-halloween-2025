@@ -4,7 +4,8 @@
   - Set `folder` to the vault folder that contains images (exactly as shown in Obsidian).
   - Emits src = shortest local relative path (for Obsidian) and data-site = "kebab-folder-name/filename" (for Quartz).
 */
-const folder = "content/[path]"; // edit to match your vault
+const path = tp.file.path(true); // e.g. "content/.../Grand Est/note.md"
+const folder = path.substring(0, path.lastIndexOf("/"));
 const cols = 3;
 
 // remove diacritics + convert spaces to hyphens (kebab-case-ish)
@@ -64,7 +65,7 @@ try {
         const localRel = noteDir ? relativePath(noteDir, vaultPath) : vaultPath;
         const safeSite = encodePath(sitePathShort);
         const safeLocal = encodePath(localRel);
-        row += `    <td style="padding:8px; text-align:center;"><img class="templater-gallery-img" src="${safeLocal}" data-site="${safeSite}" alt="${f.name}" style="max-width:100%; height:auto; border-radius:8px;"></td>\n`;
+        row += `    <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="${safeLocal}" data-site="${safeSite}" alt="${f.name}" style="max-width:100%; height:auto; border-radius:8px;"></td>\n`;
       }
       row += "  </tr>";
       rows.push(row);

@@ -1,0 +1,29 @@
+table {
+    display: grid;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    background: #1A1A1A;
+    place-content: center;
+    border: 1px solid black;
+}
+
+td img {
+    max-height: 260px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+td img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
