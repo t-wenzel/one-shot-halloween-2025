@@ -61,7 +61,7 @@ try {
       for (const f of slice){
         const vaultPath = f.path.replace(/\\/g,"/");                    // e.g. "content/.../Grand Est Imagens/..."
         const filename = vaultPath.split("/").slice(-1)[0];
-        const sitePathShort = siteFolder + "/" + filename;             // "Grand-Est-Imagens/0c3....jpg"
+        const sitePathShort = kebabify(basename) + "-Imagens/" + filename;         // "Grand-Est-Imagens/0c3....jpg"
         const localRel = noteDir ? relativePath(noteDir, vaultPath) : vaultPath;
         const safeSite = encodePath(sitePathShort);
         const safeLocal = encodePath(localRel);
