@@ -9,7 +9,7 @@ Grand Est é um bairro ao leste de [[Bommarin]]. É um dos maiores bairros de [[
 ---
 ## Imagens
 
-<table style="width:100%; border-collapse:collapse;">
+<table style="border-collapse:collapse;">
   <tr style="display: grid;grid-template-columns: repeat(3,1fr);">
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Grand%20Est%20Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" data-site="Grand-Est-Imagens/0c36731be9c6ac9923e406b7ee507d58.jpg" alt="0c36731be9c6ac9923e406b7ee507d58.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Grand%20Est%20Imagens/0cb6f65f9af4cd23bd0ad6acf659df03.jpg" data-site="Grand-Est-Imagens/0cb6f65f9af4cd23bd0ad6acf659df03.jpg" alt="0cb6f65f9af4cd23bd0ad6acf659df03.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
@@ -68,7 +68,7 @@ Grand Est é um bairro ao leste de [[Bommarin]]. É um dos maiores bairros de [[
   <tr style="display: grid;grid-template-columns: repeat(3,1fr);">
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Grand%20Est%20Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" data-site="Grand-Est-Imagens/fe12852218889be2b5f7c0c77e03ec31.jpg" alt="fe12852218889be2b5f7c0c77e03ec31.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
   </tr>
-</table>\n<script>
+</table><script>
 (function(){
   try {
     if (location.protocol !== 'file:') {

@@ -1,4 +1,4 @@
-<table style="width:100%; border-collapse:collapse;">
+<table style="border-collapse:collapse;">
   <tr style="display: grid;grid-template-columns: repeat(3,1fr);">
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" data-site="Oldtown-Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" alt="1a574d104e66bdf24755c4d6e59b87fb.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/4c9011dbc382af1f7d28075fd12c3e9b.jpg" data-site="Oldtown-Imagens/4c9011dbc382af1f7d28075fd12c3e9b.jpg" alt="4c9011dbc382af1f7d28075fd12c3e9b.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
@@ -43,7 +43,7 @@
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/f38ad1c709cde96d9adfcec72f97863e.jpg" data-site="Oldtown-Imagens/f38ad1c709cde96d9adfcec72f97863e.jpg" alt="f38ad1c709cde96d9adfcec72f97863e.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/f681d8e517ff631d6f7dfb4b038f2ac4.jpg" data-site="Oldtown-Imagens/f681d8e517ff631d6f7dfb4b038f2ac4.jpg" alt="f681d8e517ff631d6f7dfb4b038f2ac4.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>
   </tr>
-</table>\n<script>
+</table><script>
 (function(){
   try {
     if (location.protocol !== 'file:') {
