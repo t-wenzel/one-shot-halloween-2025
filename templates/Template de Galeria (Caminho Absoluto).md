@@ -2,9 +2,8 @@
 /*
   Templater: shortest-site-path gallery generator (table layout)
   - Uses absolute vault paths for img src (leading slash).
-  - src = /Vault/Folder/filename (absolute within vault).
+  - Removes any "content" path segment from the generated paths.
   - data-site = "kebab-folder/filename" (no leading slash).
-  - On site, script replaces src with data-site (works for reloads and SPA).
 */
 const path = tp.file.path(true);
 const folder = path.substring(0, path.lastIndexOf("/"));
@@ -17,10 +16,21 @@ function kebabify(s){
   return s;
 }
 function encodePath(p){ return encodeURI(p).replace(/#/g,'%23'); }
-// Return an absolute vault path (leading slash) and URI-encode it
+
+// Build an absolute vault path, removing any path segment equal to "content"
 function absoluteVaultPath(p){
-  const cleaned = String(p).replace(/\\/g,"/").replace(/^\/+|\/+$/g,"");
-  return "/" + encodePath(cleaned);
+  // normalize separators and trim
+  let cleaned = String(p).replace(/\\/g,"/").replace(/^\/+|\/+$/g,"");
+  // remove any segment equal to "content" (case-insensitive)
+  const parts = cleaned.split("/").filter(seg => seg.toLowerCase() !== "content");
+  const rejoined = parts.join("/");
+  return "/" + encodePath(rejoined);
+}
+
+// Remove "content" segments from a short site path too (if needed)
+function stripContentSegmentsShort(p){
+  const parts = String(p).replace(/\\/g,"/").replace(/^\/+|\/+$/g,"").split("/");
+  return parts.filter(seg => seg.toLowerCase() !== "content").join("/");
 }
 
 try {
@@ -50,10 +60,10 @@ try {
         const filename = vaultPath.split("/").slice(-1)[0];
         const sitePathShort = siteFolder + "/" + filename;
 
-        // Use absolute vault path for src (leading slash)
+        // Use absolute vault path for src (leading slash), with "content" segments removed
         const safeLocal = absoluteVaultPath(vaultPath);
-        // data-site remains vault-relative short path (no leading slash)
-        const safeSite = encodePath(sitePathShort).replace(/^\/+/,"");
+        // data-site remains kebabified short path (also removing any content segments just in case)
+        const safeSite = encodePath(stripContentSegmentsShort(sitePathShort)).replace(/^\/+/,"");
 
         row += `    <td style="padding:8px; text-align:center; place-content:center;">` +
                `<img class="templater-gallery-img" src="${safeLocal}" data-site="${safeSite}" alt="${f.name}" style="max-width:100%; height:auto; border-radius:8px;">` +
