@@ -1,20 +1,16 @@
 <%*
 /*
   Templater: shortest-site-path gallery generator
-  - Set `folder` to the vault folder that contains images (exactly as shown in Obsidian).
-  - Emits src = shortest local relative path (for Obsidian) and data-site = "kebab-folder-name/filename" (for Quartz).
+  - Set `folder` to the vault folder that contains the note.
+  - Only collects images that are directly inside the child folder "<basename> Imagens".
 */
-const path = tp.file.path(true); // e.g. "content/.../Grand Est/note.md"
+const path = tp.file.path(true); // e.g. "content/.../Saint Orlac/note.md"
 const folder = path.substring(0, path.lastIndexOf("/"));
 const cols = 3;
 
-// remove diacritics + convert spaces to hyphens (kebab-case-ish)
 function kebabify(s){
-  // remove leading/trailing slashes
   s = String(s).replace(/^\/+|\/+$/g, "");
-  // normalize and remove diacritics
   s = s.normalize('NFD').replace(/\p{Diacritic}/gu, "");
-  // replace spaces and repeated non-alnum with hyphens
   s = s.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g,'');
   return s;
 }
@@ -36,32 +32,35 @@ function relativePath(fromDir, toPath){
 try {
   const allFiles = app.vault.getFiles();
   const normalizedFolder = String(folder).replace(/^\/+|\/+$/g, "");
+  const parts = normalizedFolder.split("/");
+  const basename = parts[parts.length - 1];                     // "Saint Orlac"
+  const imagesChildFolder = normalizedFolder + "/" + (basename + " Imagens"); // "Saint Orlac/Saint Orlac Imagens"
+
   const active = app.workspace.getActiveFile();
   const noteDir = active ? active.path.replace(/\\/g,"/").replace(/\/[^\/]*$/,"") : "";
 
   const images = allFiles
     .filter(f=> {
-      const p = f.path.replace(/\\/g,"/");
-      return p.startsWith(normalizedFolder + "/") && /\.(jpe?g|png|gif|webp|svg)$/i.test(f.name);
+      const p = f.path.replace(/\\/g,"/");                         // full path, e.g. "Saint Orlac/Saint Orlac Imagens/foo.jpg"
+      const parent = p.split("/").slice(0,-1).join("/");          // parent folder of this file
+      // only accept images whose parent folder is exactly the imagesChildFolder
+      return parent === imagesChildFolder && /\.(jpe?g|png|gif|webp|svg)$/i.test(f.name);
     })
     .sort((a,b)=> a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
 
   if (!images || images.length === 0) {
-    tR = `<!-- Templater: No images found in folder '${normalizedFolder}'. -->`;
+    tR = `<!-- Templater: No images found in folder '${imagesChildFolder}'. -->`;
   } else {
-    // compute folder basename (last segment) and kebabify it
-    const parts = normalizedFolder.split("/");
-    const basename = parts[parts.length - 1];
-    const siteFolder = kebabify(basename); // e.g. "Grand-Est-Imagens"
+    const siteFolder = kebabify(basename) + "-Imagens"; // same naming you used before
 
     let rows = [];
     for (let i=0;i<images.length;i+=cols){
       const slice = images.slice(i, i+cols);
-      let row = `  <tr style="display: grid;grid-template-columns: repeat(3,1fr);">\n`;
+      let row = `  <tr style="display: grid;grid-template-columns: repeat(${cols},1fr);">\n`;
       for (const f of slice){
-        const vaultPath = f.path.replace(/\\/g,"/");                    // e.g. "content/.../Grand Est Imagens/..."
+        const vaultPath = f.path.replace(/\\/g,"/");
         const filename = vaultPath.split("/").slice(-1)[0];
-        const sitePathShort = kebabify(basename) + "-Imagens/" + filename;         // "Grand-Est-Imagens/0c3....jpg"
+        const sitePathShort = siteFolder + "/" + filename;
         const localRel = noteDir ? relativePath(noteDir, vaultPath) : vaultPath;
         const safeSite = encodePath(sitePathShort);
         const safeLocal = encodePath(localRel);
@@ -73,7 +72,6 @@ try {
 
     const tableHtml = "<table style=\"border-collapse:collapse;\">\n" + rows.join("\n") + "\n</table>";
 
-    // swap script: runs on site (non-file) to switch src -> data-site
     const script = `<script>
 (function(){
   try {

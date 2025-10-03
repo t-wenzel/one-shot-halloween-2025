@@ -1,3 +1,14 @@
+---
+tags:
+board do pinterest:
+---
+---
+
+
+
+---
+## Imagens
+
 <table style="border-collapse:collapse;">
   <tr style="display: grid;grid-template-columns: repeat(3,1fr);">
     <td style="padding:8px; text-align:center; place-content: center;"><img class="templater-gallery-img" src="Oldtown%20Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" data-site="Oldtown-Imagens/1a574d104e66bdf24755c4d6e59b87fb.jpg" alt="1a574d104e66bdf24755c4d6e59b87fb.jpg" style="max-width:100%; height:auto; border-radius:8px;"></td>

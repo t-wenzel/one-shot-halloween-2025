@@ -4,7 +4,7 @@ tags:
 ---
 ---
 
-Grand Est é um bairro ao leste de [[Bommarin]]. É um dos maiores bairros de [[Saint Orlac]] em termos de população e também possui uma das menores rendas per capita da cidade.
+Grand Est é um bairro ao leste de [[Bommarin]]. É um dos maiores bairros de [[Saint Orlac]] em termos de população e também possui uma das menores rendas per capita da cidade. Famosa 
 
 ---
 ## Imagens
