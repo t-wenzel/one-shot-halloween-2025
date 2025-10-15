@@ -4,7 +4,8 @@ board do pinterest:
 ---
 ---
 
-Saint Orlac é a cidade mais populosa de Sever
+Em termos de população, Saint Orlac é a maior cidade de [[Sever]] e uma das maiores cidades do mundo.
+Saint Orlac é apelidada de Cidade dos Candeeiros
 
 ---
 ## Imagens

@@ -19,7 +19,7 @@ O sistema é Call of Cthulhu. Sobre isso, acho importante ressaltar:
 
 - Sanidade e pontos de vida são muito difíceis de recuperar. A maioria demora semanas ou meses para ganhar de volta alguns pontos, por exemplo é necessário um mês de tratamento psiquiátrico para talvez curar alguém de uma insanidade indefinida ou restaurar 1d3 pontos de sanidade. Considerarem que, do jeito que estou atualmente imaginando, a duração seria de um ou talvez dois dias de tempo dentro do jogo, podendo se estender mais que isso dependendo do que decidirem fazer;
 
-- Call of Cthulhu é um sistema de tentar sua sorte. Por exemplo, um roll normal pode ser rolado novamente caso vocês justifiquem o motivo, mas falhar no segundo roll é automaticamente uma falha crítica. Existem algumas mecânicas assim, e eu irei oferecê-las em alguns momentos, mas não necessariamente elas serão a escolha certa a se fazer (ou simplesmente uma péssima escolha). A escolha de me escutar é de vocês.
+- Call of Cthulhu é um sistema de tentar sua sorte. Por exemplo, um roll normal pode ser rolado novamente caso vocês justifiquem o motivo, mas falhar no segundo roll é automaticamente uma falha crítica. Existem algumas mecânicas assim, e eu irei oferecê-las em alguns momentos, mas não necessariamente elas serão a escolha certa a se fazer (ou simplesmente uma péssima escolha). No fim, vocês decidem se querem me escutar ou não.
 
 ---
 
@@ -37,9 +37,11 @@ Vou estar usando algumas regras de casa:
 
 ## O Contexto
 
-No dia 13 de outubro do ano de ‘89, às 23h40, um assassinato foi reportado para o Departamento de Polícia de Saint Orlac. Apesar das circunstâncias peculiares do cadáver encontrado, apenas rumores estranhos e piadas mórbidas dentre os comissariados surgiram do caso. Após alguns dias de interrogações improdutivas, a investigação foi deixada em aberto, com alguns poucos oficiais atribuídos a ela para questões de papelada.
+No dia 13 de outubro do ano de ‘89, às 23h40, um assassinato foi reportado para a Guarda Pública d’Orlac. Apesar das circunstâncias peculiares do cadáver encontrado, apenas rumores estranhos e piadas mórbidas dentre os comissariados surgiram do caso. Após alguns dias de interrogações improdutivas, a investigação foi deixada em aberto, com alguns poucos oficiais atribuídos a ela para questões de papelada.
 
 Contudo, duas semanas depois, outro corpo foi reportado em condições similares ao do dia 13. Rumores rapidamente escalaram, se tornando conversas que, em troca, se tornaram notícias. Em menos de um dia, os moradores de Bommarin, onde ambos os corpos foram encontrados, passaram a fazer demonstrações demandando ação imediata da polícia.
+
+Perante grande pressão da Guarda, o 37º Comissariado foi acionado como responsável pelas mortes suspeitas que ocorreram nestes dias. Foi alocada uma respeitável quantidade de verba para o setor de Crimes Graves do Comissariado para investigação do caso, organizando uma das forças-tarefa mais bem estruturadas da história do distrito.
 
 ---
 
