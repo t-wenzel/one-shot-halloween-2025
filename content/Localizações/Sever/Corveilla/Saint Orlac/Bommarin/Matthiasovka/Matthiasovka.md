@@ -1,10 +1,18 @@
 ---
 tags:
-board do pinterest:
+  - bommarin
+  - saint-orlac
+  - corveilla
+  - sever
+  - bairro
+  - matthiasovka
+board do pinterest: https://www.pinterest.com/backed47/matthiasovka/
+draft: false
 ---
 ---
 
-Matthiasovka é um bairro ao noroeste de [Bommarin](../Bommarin.md). É famoso pela sua diversidade, abrigando a maior população de imigrantes de primeira à segunda geração em Saint Orlac.
+Matthiasovka é um bairro ao noroeste de [Bommarin](../Bommarin.md). Bommarin sendo famosa pela sua diversidade vem em larga parte da população deste bairro, que abriga a maior população de imigrantes de primeira à segunda geração em Saint Orlac.
+É um bairro residencial e comercial, composto por prédios que raramente passam dos cinco andares de altura. São geralmente construídos com tijolos e, assim como todos os bairros residenciais em Saint Orlac, devem por lei possuir saídas e escadas de emergência desde os Atos para Combate à Incêndios de '45.
 
 ---
 ## Imagens

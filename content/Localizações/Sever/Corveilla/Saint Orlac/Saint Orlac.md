@@ -1,11 +1,14 @@
 ---
 tags:
+  - saint-orlac
+  - corveilla
+  - sever
+  - cidade
 board do pinterest:
 ---
 ---
 
-Em termos de população, Saint Orlac é a maior cidade de [[Sever]] e uma das maiores cidades do mundo.
-Saint Orlac é apelidada de Cidade dos Candeeiros
+Saint Orlac, apelidada de Cidade dos Candeeiros, é a maior cidade de [[Sever]] em termos de população, e uma das maiores cidades do mundo.
 
 ---
 ## Imagens

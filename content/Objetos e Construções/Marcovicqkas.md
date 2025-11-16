@@ -4,7 +4,7 @@ board do pinterest:
 ---
 ---
 
-Marcovicqkas são construções Corvigny de baixo custo para fins residenciais erguidas durante a presidência de [[Jean-Claude Marcovicq]].
+Marcovicqkas são construções Corvigny de baixo custo para fins residenciais erguidas durante a presidência de [[Jean-Claude Marcovicq]]. Após a posse de Marcovicq em '65, foi implementada uma de suas promessas de campanha, o Plano Trisanual das Moradias,
 
 ---
 

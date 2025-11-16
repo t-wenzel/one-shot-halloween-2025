@@ -1,6 +1,13 @@
 ---
 tags:
-board do pinterest:
+  - bommarin
+  - saint-orlac
+  - corveilla
+  - sever
+  - bairro
+  - oldtown
+board do pinterest: https://www.pinterest.com/backed47/oldtown/
+draft: false
 ---
 ---
 

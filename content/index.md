@@ -41,7 +41,7 @@ No dia 13 de outubro do ano de ‘89, às 23h40, um assassinato foi reportado pa
 
 Contudo, duas semanas depois, outro corpo foi reportado em condições similares ao do dia 13. Rumores rapidamente escalaram, se tornando conversas que, em troca, se tornaram notícias. Em menos de um dia, os moradores de Bommarin, onde ambos os corpos foram encontrados, passaram a fazer demonstrações demandando ação imediata da polícia.
 
-Perante grande pressão da Guarda, o 37º Comissariado foi acionado como responsável pelas mortes suspeitas que ocorreram nestes dias. Foi alocada uma respeitável quantidade de verba para o setor de Crimes Graves do Comissariado para investigação do caso, organizando uma das forças-tarefa mais bem estruturadas da história do distrito.
+Perante grande pressão da Guarda, o 37º Comissariado foi acionado como responsável pelas mortes suspeitas que ocorreram nestes dias. Foi alocada uma respeitável quantidade de verba para o Setor de Crimes Graves do Comissariado para investigação do caso, organizando uma das forças-tarefa mais bem estruturadas da história do distrito.
 
 ---
 
